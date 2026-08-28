@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    
+    <div class="modal-overlay">
+
+        <div class="login-card">
+
+            <h2>Account Access</h2>
+
+            <div class="role-selection">
+                <button type="button" class="role-btn" data-role="user"> User </button>
+                <button type="button" class="role-btn" data-role="admin"> Administration </button>
+            </div>
+
+            <div class="mode-selection">
+                <button type="button" class="mode-btn active" data-mode="login"> Login </button>
+                <button type="button" class="mode-btn" data-mode="signup"> Sign Up </button>
+            </div>
+
+            
+            <div class="form-container">
+
+                <p class="instruction">
+                    Select your role to continue
+                </p>
+
+                <!-- Login form -->
+                <form class="auth-form login-form">
+
+                    <div class="user-field">
+                        <label for="login-user-id">Kisaan ID</label>
+                        <input
+                            id="login-user-id"
+                            type="text"
+                            placeholder="Enter Kisaan ID"
+                            required
+                        >
+                    </div>
+
+                    <div class="admin-field">
+                        <label for="login-admin-id">Center ID</label>
+                        <input
+                            id="login-admin-id"
+                            type="text"
+                            placeholder="Enter Center ID"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="login-password">Password</label>
+                        <input
+                            id="login-password"
+                            type="password"
+                            placeholder="Enter password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Login
+                    </button>
+
+                </form>
+
+
+                <!-- Signup form -->
+                <form class="auth-form signup-form">
+
+                    <div class="user-field">
+                        <label for="signup-user-id">Kisaan ID</label>
+                        <input
+                            id="signup-user-id"
+                            type="text"
+                            placeholder="Enter Kisaan ID"
+                            required
+                        >
+                    </div>
+
+                    <div class="admin-field">
+                        <label for="signup-admin-id">Center ID</label>
+                        <input
+                            id="signup-admin-id"
+                            type="text"
+                            placeholder="Enter Center ID"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="signup-password">Password</label>
+                        <input
+                            id="signup-password"
+                            type="password"
+                            placeholder="Create password"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="confirm-password">Confirm Password</label>
+                        <input
+                            id="confirm-password"
+                            type="password"
+                            placeholder="Confirm password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Sign Up
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../static/js/login.js"></script>
+
+</body>
+</html>

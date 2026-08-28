@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #f5f5f7;
+}
+
+
+/* Dark background */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* background: rgba(0, 0, 0, 0.5); */
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url("../images/no-one-cares-l_5MJnbrmrs-unsplash.jpg");
+
+
+    padding: 20px;
+}
+
+
+/* Card */
+
+.login-card {
+    width: 360px;
+    max-width: 100%;
+
+    padding: 28px;
+
+    background: white;
+    border-radius: 12px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.login-card h2 {
+    margin-bottom: 22px;
+
+    text-align: center;
+
+    color: #1a1a2e;
+    font-size: 22px;
+}
+
+
+/* User / Administration */
+
+.role-selection {
+    display: flex;
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.role-btn {
+    flex: 1;
+
+    padding: 11px;
+
+    border: 2px solid #ddd;
+    border-radius: 7px;
+
+    background: #fafafa;
+    color: #555;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.role-btn:hover,
+.role-btn.selected {
+    border-color: #e94560;
+
+    background: #e94560;
+    color: white;
+}
+
+
+/* Login / Sign Up */
+
+.mode-selection {
+    display: flex;
+
+    border-bottom: 2px solid #eee;
+
+    margin-bottom: 20px;
+}
+
+.mode-btn {
+    flex: 1;
+
+    padding: 10px;
+
+    border: none;
+    border-bottom: 2px solid transparent;
+
+    background: none;
+
+    color: #999;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.mode-btn.active {
+    color: #1a1a2e;
+    border-bottom-color: #e94560;
+}
+
+
+/* Form locked initially */
+
+.form-container {
+    opacity: 0.4;
+    pointer-events: none;
+
+    transition: opacity 0.2s;
+}
+
+.form-container.enabled {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.instruction {
+    margin-bottom: 14px;
+
+    text-align: center;
+
+    color: #999;
+    font-size: 13px;
+}
+
+
+/* Forms */
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.auth-form label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #444;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.auth-form input {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.auth-form input:focus {
+    border-color: #e94560;
+
+    box-shadow: 0 0 0 2px rgba(233, 69, 96, 0.1);
+}
+
+
+/* Submit */
+
+.submit-btn {
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 4px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #1a1a2e;
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.submit-btn:hover {
+    background: #e94560;
+}
+
+
+/* Initial state */
+
+.admin-field,
+.signup-form {
+    display: none;
+}
+
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    .login-card {
+        padding: 24px 20px;
+    }
+
+    .login-card h2 {
+        font-size: 20px;
+    }
+
+    .role-btn {
+        font-size: 14px;
+    }
+}
