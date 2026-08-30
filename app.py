@@ -1,17 +1,17 @@
-from flask import Flask, render_template, redirect, request, flash, session
+from flask import Flask, render_template, redirect, request, flash, session, jsonify, url_for
+from flask_cors import CORS
+from config import Config
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
-import os
-from dotenv import load_dotenv
+import datetime
 
-load_dotenv()
 
 app = Flask(__name__)
+app.config.from_object(Config)
+CORS(app)  # Enable CORS for all routes
 
-app.secret_key = os.environ.get("SECRET_KEY", "dev-only-fallback")
-
-app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("SUPABASE_URL")
-db = SQLAlchemy(app)
+# Initialize database on startup
+init_db()
 
 class Farmer(db.Model):
     aadhar   = db.Column(db.String(12), primary_key=True)
